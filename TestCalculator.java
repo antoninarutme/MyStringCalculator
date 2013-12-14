@@ -92,7 +92,7 @@ public class TestCalculator {
     public void shouldThrowExceptionContainingAllNegatives() {
         ex.expectMessage("-2");
         ex.expectMessage("-3");
-        calculator.add("1,2,-3");
+        calculator.add("1,-2,-3");
     }
 
 }
