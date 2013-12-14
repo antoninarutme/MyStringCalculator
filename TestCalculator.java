@@ -26,7 +26,7 @@ public class TestCalculator {
     	//act
     	int act = calculator.add("1");
     	//assert
-    	assertEquals(2,act);
+    	assertEquals(1,act);
     }
     
     @SuppressWarnings("deprecation")
@@ -35,7 +35,7 @@ public class TestCalculator {
     	//act
     	int act = calculator.add("2");
     	//assert
-    	assertEquals(1,act);
+    	assertEquals(2,act);
     }
 
 }
