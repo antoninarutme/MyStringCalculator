@@ -65,7 +65,7 @@ public class TestCalculator {
            //act
        	int act = calculator.add("1\n2,3");
        	//assert
-       	assertEquals(5, act);
+       	assertEquals(6, act);
        }
 
 }
