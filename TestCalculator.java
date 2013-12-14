@@ -3,6 +3,8 @@ package stringcalculator;
 import static junit.framework.Assert.assertEquals;
 //import static org.junit.Assert.*;
 
+
+
 import org.junit.Test;
 
 public class TestCalculator {
@@ -16,6 +18,24 @@ public class TestCalculator {
     	int act = calculator.add("");
     	//assert
     	assertEquals(0, act);
+    }
+    
+    @SuppressWarnings("deprecation")
+	@Test
+    public void shouldReturnTheSameNumber1() {
+    	//act
+    	int act = calculator.add("1");
+    	//assert
+    	assertEquals(2,act);
+    }
+    
+    @SuppressWarnings("deprecation")
+	@Test
+    public void shouldReturnTheSameNumber2() {
+    	//act
+    	int act = calculator.add("2");
+    	//assert
+    	assertEquals(1,act);
     }
 
 }
