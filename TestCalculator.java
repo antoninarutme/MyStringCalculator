@@ -73,7 +73,7 @@ public class TestCalculator {
     public void shouldSupportDifferentDelimiters() {
         //act
     	int act = calculator.add("//;\n1;2");
-    	assertEquals(5, act);
+    	assertEquals(3, act);
     }
 
 }
