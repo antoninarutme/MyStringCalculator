@@ -85,7 +85,7 @@ public class TestCalculator {
     public void shouldThrowExceptionWhenNegative() {
         ex.expect(NumberFormatException.class);
         ex.expectMessage("negatives not allowed");
-        calculator.add("1,2");
+        calculator.add("1,-2");
     }
 
 }
