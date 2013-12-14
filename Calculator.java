@@ -10,17 +10,20 @@ public class Calculator {
     public static final String PREFIX = "//";
 
     public int add(String s) {
-        if (s.isEmpty()) return 0;
-        String delimiter;
+        //check empty string
+    	if (s.isEmpty()) return 0;
+        //parameters for the loop
+    	String delimiter;
         String numbers;
         if (s.startsWith(PREFIX)) {
-            delimiter = s.substring(PREFIX.length(), PREFIX.length() + 1);
+            //Support different delimiters
+        	delimiter = s.substring(PREFIX.length(), PREFIX.length() + 1);
             numbers = s.substring(s.indexOf('\n') + 1);
         } else {
             delimiter = DEFAULT_DELIMITER_REGEX;
             numbers = s;
         }
-
+        //getting a sum
         String[] strings = numbers.split(delimiter);
         int sum = 0;
         List<Integer> negatives = new ArrayList<Integer>();
@@ -29,7 +32,7 @@ public class Calculator {
             if (n < 0) negatives.add(n);
             sum += n;
         }
-
+        //the exception check
         if (!negatives.isEmpty()) {
             throw new NumberFormatException("negatives not allowed " + negatives);
         }

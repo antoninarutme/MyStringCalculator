@@ -78,20 +78,25 @@ public class TestCalculator {
     public void shouldSupportDifferentDelimiters() {
         //act
     	int act = calculator.add("//;\n1;2");
+    	//assert
     	assertEquals(3, act);
     }
     
     @Test
     public void shouldThrowExceptionWhenNegative() {
-        ex.expect(NumberFormatException.class);
+        //get exception
+    	ex.expect(NumberFormatException.class);
         ex.expectMessage("negatives not allowed");
+        //check
         calculator.add("1,-2");
     }
     
     @Test
     public void shouldThrowExceptionContainingAllNegatives() {
-        ex.expectMessage("-2");
+        //get exception
+    	ex.expectMessage("-2");
         ex.expectMessage("-3");
+        //check
         calculator.add("1,-2,-3");
     }
 
