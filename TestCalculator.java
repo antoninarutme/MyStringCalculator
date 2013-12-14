@@ -9,10 +9,15 @@ import static junit.framework.Assert.assertEquals;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class TestCalculator {
 	
+	@Rule
+	public ExpectedException ex = ExpectedException.none();
+
 	private final Calculator calculator = new Calculator();
 
     @SuppressWarnings("deprecation")
@@ -74,6 +79,13 @@ public class TestCalculator {
         //act
     	int act = calculator.add("//;\n1;2");
     	assertEquals(3, act);
+    }
+    
+    @Test
+    public void shouldThrowExceptionWhenNegative() {
+        ex.expect(NumberFormatException.class);
+        ex.expectMessage("negatives not allowed");
+        calculator.add("1,2");
     }
 
 }
