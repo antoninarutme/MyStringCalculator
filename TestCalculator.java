@@ -58,5 +58,14 @@ public class TestCalculator {
     	//assert
     	assertThat(act, is(6));
     }
+    
+    @SuppressWarnings("deprecation")
+   	@Test
+       public void shouldAllowNewLineAsDelimiter() {
+           //act
+       	int act = calculator.add("1\n2,3");
+       	//assert
+       	assertEquals(5, act);
+       }
 
 }
