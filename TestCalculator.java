@@ -15,7 +15,7 @@ public class TestCalculator {
     	//act//
     	int act = calculator.add("");
     	//assert
-    	assertEquals(1, act);
+    	assertEquals(0, act);
     }
 
 }
