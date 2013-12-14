@@ -45,7 +45,7 @@ public class TestCalculator {
            //act
        	int act = calculator.add("1,2");
        	//assert
-       	assertEquals(5,act);
+       	assertEquals(3,act);
        }
 
 }
