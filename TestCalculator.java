@@ -6,6 +6,9 @@ import static junit.framework.Assert.assertEquals;
 
 
 
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+
 import org.junit.Test;
 
 public class TestCalculator {
@@ -47,5 +50,13 @@ public class TestCalculator {
        	//assert
        	assertEquals(3,act);
        }
+    
+    @Test
+    public void shouldReturnSumOfThreeNumbers() {
+        //act
+    	int act = calculator.add("1,2,3");
+    	//assert
+    	assertThat(act, is(5));
+    }
 
 }
