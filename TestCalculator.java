@@ -67,5 +67,13 @@ public class TestCalculator {
        	//assert
        	assertEquals(6, act);
        }
+    
+    @SuppressWarnings("deprecation")
+	@Test
+    public void shouldSupportDifferentDelimiters() {
+        //act
+    	int act = calculator.add("//;\n1;2");
+    	assertEquals(5, act);
+    }
 
 }

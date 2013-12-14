@@ -1,21 +1,40 @@
 package stringcalculator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Calculator {
 	
 	//helps
     public static final String DEFAULT_DELIMITER_REGEX = "[,\n]";
     public static final String PREFIX = "//";
 
-    public int add(String s)
-    {
-    	int sum = 0;
-    	if (s.isEmpty()) return 0;
-    	if (s.equals("1")) return 1;
-    	if (s.equals("2")) return 2;
-    	if (s.equals("1,2")) return 3;
-    	if (s.equals("1,2,3")) return 6;
-    	if (s.equals("1\n2,3")) return 6;
-    	return sum;
+    public int add(String s) {
+        if (s.isEmpty()) return 0;
+        String delimiter;
+        String numbers;
+        if (s.startsWith(PREFIX)) {
+            delimiter = s.substring(PREFIX.length(), PREFIX.length() + 1);
+            numbers = s.substring(s.indexOf('\n') + 1);
+        } else {
+            delimiter = DEFAULT_DELIMITER_REGEX;
+            numbers = s;
+        }
+
+        String[] strings = numbers.split(delimiter);
+        int sum = 0;
+        List<Integer> negatives = new ArrayList<Integer>();
+        for (String string : strings) {
+            int n = Integer.parseInt(string);
+            if (n < 0) negatives.add(n);
+            sum += n;
+        }
+
+        if (!negatives.isEmpty()) {
+            throw new NumberFormatException("negatives not allowed " + negatives);
+        }
+
+        return sum;
     }
 
 }
