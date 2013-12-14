@@ -5,6 +5,7 @@ import static junit.framework.Assert.assertEquals;
 
 
 
+
 import org.junit.Test;
 
 public class TestCalculator {
@@ -37,5 +38,14 @@ public class TestCalculator {
     	//assert
     	assertEquals(2,act);
     }
+    
+    @SuppressWarnings("deprecation")
+   	@Test
+       public void shouldReturnSumOfTwoNumbers() {
+           //act
+       	int act = calculator.add("1,2");
+       	//assert
+       	assertEquals(5,act);
+       }
 
 }
