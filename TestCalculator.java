@@ -87,5 +87,12 @@ public class TestCalculator {
         ex.expectMessage("negatives not allowed");
         calculator.add("1,-2");
     }
+    
+    @Test
+    public void shouldThrowExceptionContainingAllNegatives() {
+        ex.expectMessage("-2");
+        ex.expectMessage("-3");
+        calculator.add("1,2,-3");
+    }
 
 }
